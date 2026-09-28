@@ -52,7 +52,8 @@ menus:
         hide-attributes: false
       privileges:
         slot: 16
-        material: MAGMA_CREAM
+        material: FLINT
+        custom-model-data: 101
         name: '&#9A6BFF&lП&#A575ED&lр&#B07FDA&lи&#BC8AC8&lв&#C794B6&lи&#D29EA3&lл&#DDA891&lе&#E9B37F&lг&#F4BD6C&lи&#FFC75A&lи'
         lore:
           - '&#C8C5B8Привелегии сервера'
