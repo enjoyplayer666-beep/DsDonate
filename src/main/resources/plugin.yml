@@ -14,6 +14,9 @@ commands:
     description: Меню привилегий
     usage: /donate
     aliases: [donat, privileges, привилегии]
+  warps:
+    description: Меню телепортов
+    usage: /warps
   dsmenu:
     description: Перезагрузка конфига меню
     usage: /dsmenu reload

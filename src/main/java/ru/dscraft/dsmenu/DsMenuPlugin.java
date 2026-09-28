@@ -94,8 +94,38 @@ public final class DsMenuPlugin extends JavaPlugin implements Listener {
             sender.sendMessage("Меню можно открыть только в игре.");
             return true;
         }
-        open(player, name.equals("donate") ? "donate" : "main");
+        String menu = menuForCommand(label);
+        if (menu == null) menu = menuForCommand(name);
+        open(player, menu == null ? "main" : menu);
         return true;
+    }
+
+    /** Меню, которое открывает команда (menus.<id>.commands), или null. */
+    private String menuForCommand(String label) {
+        ConfigurationSection menus = getConfig().getConfigurationSection("menus");
+        if (menus == null) return null;
+        String l = label.toLowerCase();
+        int colon = l.indexOf(':');
+        if (colon >= 0) l = l.substring(colon + 1); // essentials:warps -> warps
+        for (String id : menus.getKeys(false)) {
+            for (String c : menus.getStringList(id + ".commands")) {
+                if (c.equalsIgnoreCase(l)) return id;
+            }
+        }
+        return null;
+    }
+
+    /** Команды меню (например /warps) перехватываются раньше других плагинов (Essentials). */
+    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+    public void onMenuCommand(org.bukkit.event.player.PlayerCommandPreprocessEvent event) {
+        String msg = event.getMessage().trim();
+        if (msg.length() < 2) return;
+        String[] parts = msg.substring(1).split("\\s+");
+        if (parts.length != 1) return; // /warps <что-то> - отдаём дальше
+        String menu = menuForCommand(parts[0]);
+        if (menu == null) return;
+        event.setCancelled(true);
+        open(event.getPlayer(), menu);
     }
 
     // ---------------- меню ----------------

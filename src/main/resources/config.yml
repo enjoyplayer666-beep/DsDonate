@@ -25,6 +25,7 @@ menu-item:
 
 menus:
   main:
+    commands: [menu, меню]
     title: '&#8971AF                 Меню'
     rows: 3
     items:
@@ -41,7 +42,7 @@ menus:
         name: '&#54A6F4&lВ&#67B0EC&lа&#7ABAE5&lр&#8CC4DE&lп&#9FCED6&lы'
         lore:
           - '&#C8C5B8Варпы сервера'
-        action: 'none'
+        action: 'open:warps'
       clans:
         slot: 14
         material: NETHERITE_SWORD
@@ -60,6 +61,7 @@ menus:
         action: 'open:donate'
 
   donate:
+    commands: [donate, donat, privileges, привилегии]
     title: '&#8971AF             Привилегии'
     rows: 5
     click-message: '&7Покупка привилегий на сайте &#8971AF&nds-craft.ru'
@@ -265,3 +267,97 @@ menus:
         lore:
           - '&fНажми чтобы закрыть меню'
         action: 'close'
+
+  # /warps и сундук "Варпы" в главном меню. Иконки - модели из ресурс-пака SP-DS.
+  warps:
+    title: '&#8971AF               Телепорты'
+    rows: 6
+    # эти команды открывают меню (перехватываются раньше Essentials)
+    commands: [warps]
+    items:
+      armor:
+        slot: 2
+        material: ANVIL
+        name: '&#9259E7Прокачка брони'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp armor'
+      afk:
+        slot: 4
+        material: RED_BED
+        name: '&eAFK &7мир'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp afk'
+      top:
+        slot: 6
+        material: DIAMOND_SWORD
+        custom-model-data: 10011
+        name: '&#9259E7Топы игроков/кланов'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp top'
+        hide-attributes: false
+      spawn:
+        slot: 10
+        material: IRON_INGOT
+        custom-model-data: 187
+        name: '&#6BFF5CН&#7BFF5Aа&#8CFF59ч&#9CFF57а&#ACFF56л&#BDFF54ь&#CDFF52н&#DEFF51ы&#EEFF4Fй &7мир'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp spawn'
+      mystic:
+        slot: 12
+        material: IRON_INGOT
+        custom-model-data: 101
+        name: '&#7FB2FFМ&#86B1FFи&#8CAFFFс&#92AEFFт&#99ACFFи&#A0ABFFч&#A6AAFFе&#ACA8FFс&#B3A7FFк&#BAA5FFи&#C0A4FFй &7мир'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp mystic'
+      under:
+        slot: 14
+        material: IRON_INGOT
+        custom-model-data: 149
+        name: '&#FF4747П&#FF4D49о&#FF544Cд&#FF5A4Eз&#FF6050е&#FF6753м&#FF6D55н&#FF7458ы&#FF7A5Aй &7мир'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp under'
+      ice:
+        slot: 16
+        material: IRON_INGOT
+        custom-model-data: 118
+        name: '&#3FE8FFЛ&#4CE3FFе&#59DDFFд&#66D8FFя&#74D3FFн&#81CDFFо&#8EC8FFй &7мир'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp ice'
+      hell:
+        slot: 30
+        material: IRON_INGOT
+        custom-model-data: 195
+        name: '&#FF8A2EА&#FF8531л&#FF8133ь&#FF7C36т&#FF7838е&#FF733Bр&#FF6F3Dн&#FF6A40а&#FF6642т&#FF6145и&#FF5D47в&#FF584Aн&#FF544Cы&#FF4F4Fй &7мир'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp hell'
+      infinity:
+        slot: 32
+        material: IRON_INGOT
+        custom-model-data: 204
+        name: '&#B04CFFБ&#A849FFе&#A045FFс&#9742FFк&#8F3FFFо&#873CFFн&#7F38FFе&#7735FFч&#6E32FFн&#662EFFы&#5E2BFFй &7мир'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp infinity'
+      case:
+        slot: 49
+        material: LEATHER_HORSE_ARMOR
+        custom-model-data: 1000
+        name: '&6Кейсы'
+        lore:
+          - '&#C8C5B8Нажми для перемещения'
+        action: 'command:warp case'
+      back:
+        slot: 45
+        material: REDSTONE
+        name: '&cНазад'
+        lore:
+          - '&7Вернуться в меню'
+        action: 'open:main'
