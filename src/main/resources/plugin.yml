@@ -1,0 +1,20 @@
+name: DsDonate
+version: '${project.version}'
+main: ru.dscraft.dsdonate.DsDonatePlugin
+api-version: '1.21'
+author: DestroyCraft
+description: Меню привилегий /donate
+
+commands:
+  donate:
+    description: Меню привилегий
+    usage: /donate
+    aliases: [donat, privileges, привилегии]
+  dsdonate:
+    description: Перезагрузка конфига меню привилегий
+    usage: /dsdonate reload
+    permission: dsdonate.admin
+
+permissions:
+  dsdonate.admin:
+    default: op
