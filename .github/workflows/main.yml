@@ -1,4 +1,4 @@
-name: Build DsDonate
+name: Build DsMenu
 
 on:
   push:
@@ -24,5 +24,5 @@ jobs:
       - name: Выложить jar
         uses: actions/upload-artifact@v4
         with:
-          name: DsDonate
+          name: DsMenu
           path: target/*.jar

@@ -1,13 +1,14 @@
-# DsDonate 1.0.0 (Paper 1.21.1)
+# DsMenu 1.0.0 (Paper 1.21.1)
 
-Меню привилегий DestroyCraft: `/donate` (также `/donat`, `/privileges`, `/привилегии`).
+Меню DestroyCraft:
 
-- Красители - привилегии VIP, Luxe, Deluxe, Ultra, Legend, Elite SP: при наведении список
-  возможностей, цена и сайт (цвета и тексты сняты со скринов сервера-образца).
-- Сундуки - киты привилегий, редстоун - «Закрыть».
-- Клик по привилегии пишет в чат ссылку на сайт (`menu.click-message`, `menu.click-url`).
+- `/menu` (`/меню`) или ПКМ по предмету-кремню - главное меню: Спавн (`/spawn`), Варпы (позже),
+  Кланы (`/clan`), Привилегии (открывает меню привилегий).
+- `/donate` (`/donat`, `/privileges`, `/привилегии`) - меню привилегий VIP, Luxe, Deluxe, Ultra, Legend, Elite SP.
+- Предмет меню (кремень, модель `custom-model-data: 102`) выдаётся в игровых мирах: при входе через портал,
+  при заходе и после возрождения; в лобби (`menu-item.lobby-worlds`) забирается. Выбросить, переложить
+  или потерять при смерти его нельзя.
 
-Всё оформление - `plugins/DsDonate/config.yml` (цвета `&a`, `&#RRGGBB`), после правки - `/dsdonate reload`
-(право `dsdonate.admin`).
+Всё настраивается в `plugins/DsMenu/config.yml`, после правки - `/dsmenu reload` (право `dsmenu.admin`).
 
-Сборка: `mvn clean package` или GitHub Actions → артефакт `DsDonate`.
+Сборка: `mvn clean package` или GitHub Actions → артефакт `DsMenu`.
